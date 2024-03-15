@@ -4,7 +4,7 @@ spring:
   application:
     name: playlist
   datasource:
-    url: jdbc:postgresql://localhost:5431/beatbuddy_playlist
+    url: jdbc:postgresql://playlist-db:5432/beatbuddy_playlist
     username: bbplaylistdb
     password: bbplaylistdb
   flyway:
@@ -19,6 +19,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8000/eureka
+      defaultZone: http://eureka-discovery:8000/eureka
   instance:
     instance-id: ${spring.application.name}:${random.value}
+    preferIpAddress: true
