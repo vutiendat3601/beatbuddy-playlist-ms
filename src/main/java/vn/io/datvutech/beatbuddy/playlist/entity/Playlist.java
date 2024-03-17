@@ -34,5 +34,7 @@ public class Playlist extends AbstractEntity {
 
     private Boolean isPublic = false;
 
+    private Integer durationSec = 0;
+
     private String tracksJson;
 }

@@ -3,6 +3,7 @@ package vn.io.datvutech.beatbuddy.playlist.dto;
 import java.util.List;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,10 +18,11 @@ public class PlaylistDto {
     private String name;
 
     @Schema(name = "thumbnail", description = "Thumbnail image url of Playlist")
+    @Pattern(regexp = "^(http|https)://([\\w.-]+)(:\\d+)?(/\\S*)?$", message = "Invalid thumbnail URL")
     private String thumbnail;
 
     @Schema(name = "durationSec", description = "Length of Playlist time")
-    private Long durationSec = 0L;
+    private Integer durationSec = 0;
 
     @Schema(name = "description", description = "Description about Playlist")
     private String description;
