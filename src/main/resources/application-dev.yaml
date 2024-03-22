@@ -8,9 +8,6 @@ spring:
     baseline-on-migrate: true
   jpa:
     show-sql: true
-  docker:
-    compose:
-      enabled: true
 eureka:
   client:
     serviceUrl:
