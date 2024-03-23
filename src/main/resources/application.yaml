@@ -1,9 +1,11 @@
 server:
-  port: 0
+  port: 8080
 spring:
   application:
     name: playlist
+  devtools:
+    livereload:
+      enabled: false
 eureka:
-  instance:
-    instance-id: ${spring.application.name}:${random.value}
-    preferIpAddress: true
+  client:
+    enabled: false

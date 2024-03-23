@@ -1,3 +1,5 @@
+server:
+  port: 0
 spring:
   datasource:
     url: jdbc:postgresql://playlist-db:5432/beatbuddy_playlist
@@ -7,11 +9,14 @@ spring:
     baseline-version: 0
     baseline-on-migrate: true
   jpa:
-    show-sql: true
-  docker:
-    compose:
+      show-sql: true
+  devtools:
+    livereload:
       enabled: true
 eureka:
   client:
+    enabled: true
     serviceUrl:
       defaultZone: http://eureka-discovery:8000/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
